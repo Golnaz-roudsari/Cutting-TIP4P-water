@@ -19,7 +19,7 @@ for j in range(len(LoL_sliced)):            #going through the line in pdb file
     line_ls= line.split()                   #splitting lines columnwise 
     z = line_ls[7]                          #reading z column
     index = line.find(z)                    #specifing the index of column z
-    line_new = line[:index] + "-"+z + line[index+len(z)+1:] #adding the indexes before and after column z and adding negative sign to the z column 
+    line_new = line[:index-1] + "-"+z + line[index-1+len(z)+1:] #adding the indexes before and after column z and adding negative sign to the z column 
     LoL_new.append(line_new)                #appending the rows in list of new lines
 
 LoL_new= LoL[0:4] + LoL_new + LoL[-2:]      #concatenating the fisrt 4lines and the last 2 lines with the cutting part of droplet
